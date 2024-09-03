@@ -122,3 +122,16 @@ Route::resource('photos', PhotoController::class)->only([ 'index', 'show'
 
 Route::resource('photos', PhotoController::class)->except([ 'create', 'store', 'update', 'destroy'
 ]);
+
+//ROUTE VIEW
+Route::get('/greeting', function () {
+    return view('hello', ['name' => 'Shafira']);
+    });  
+    
+//dengan file blog
+Route::get('/greeting', function () {
+        return view('blog.hello', ['name' => 'Firaaa']);
+        });
+        
+//mengubah ke welcomecontroller
+Route::get('/greeting', [WelcomeController::class, 'greeting']);
